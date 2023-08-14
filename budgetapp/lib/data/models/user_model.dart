@@ -4,8 +4,13 @@ class User {
   int? id;
   String? name;
   String? email;
+  String? error;
 
   User({this.accessToken, this.tokenType, this.id, this.name, this.email});
+
+  User.withError(String errorMessage) {
+    error = errorMessage;
+  }
 
   User.fromJson(Map<String, dynamic> json) {
     accessToken = json['access_token'];

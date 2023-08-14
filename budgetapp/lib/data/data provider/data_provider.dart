@@ -13,7 +13,7 @@ class DataProvider {
   }) async {
     try {
       // Starting Timer
-      DateTime stime = DateTime.now();
+      DateTime sTime = DateTime.now();
       Dio dio = Dio();
       // ignore: deprecated_member_use
       (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
@@ -42,7 +42,9 @@ class DataProvider {
               sendTimeout: const Duration(milliseconds: 30000),
               receiveTimeout: const Duration(milliseconds: 30000),
             ));
-        print(response);
+        if (kDebugMode) {
+          print(response);
+        }
       } else if (method.toUpperCase() == "PUT") {
         response = await dio.put(url,
             queryParameters: query,
@@ -80,7 +82,7 @@ class DataProvider {
       DateTime etime = DateTime.now();
 
       // Calculating Time
-      Duration diff = etime.difference(stime);
+      Duration diff = etime.difference(sTime);
 
       // Printing Results
       if (kDebugMode) {

@@ -1,3 +1,4 @@
+import 'package:budgetapp/presentation/screens/authentication/registration_screen.dart';
 import 'package:flutter/material.dart';
 
 class InitialNavigationScreen extends StatefulWidget {
@@ -11,6 +12,6 @@ class InitialNavigationScreen extends StatefulWidget {
 class _InitialNavigationScreenState extends State<InitialNavigationScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return RegistrationScreen();
   }
 }
