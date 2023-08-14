@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
 
-class ConnectionHelper {
+class DataProvider {
   Future<Response<dynamic>?> fetchData(
     String method,
     String url, {
