@@ -3,7 +3,7 @@ import 'package:budgetapp/data/models/user_model.dart';
 import 'package:budgetapp/data/network_constants.dart';
 import 'package:dio/dio.dart';
 
-class UserProvider {
+class UserRepository {
   final DataProvider dataProvider = DataProvider();
   Future<bool> userRegistration(
       {required String email,
