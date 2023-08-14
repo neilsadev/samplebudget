@@ -15,6 +15,8 @@ class DataProvider {
       // Starting Timer
       DateTime sTime = DateTime.now();
       Dio dio = Dio();
+      dio.interceptors.add(
+          LogInterceptor(responseBody: true)); // Enable responseBody logging
       // ignore: deprecated_member_use
       (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
           (HttpClient client) {

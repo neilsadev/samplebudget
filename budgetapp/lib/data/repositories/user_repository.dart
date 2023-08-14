@@ -14,13 +14,15 @@ class UserRepository {
       'email': email,
       'password': password
     };
+    print(registrationPayload);
     Response<dynamic>? apiResponse = await dataProvider.fetchData(
       "POST",
       API.signUp,
       data: registrationPayload,
     );
+    print(apiResponse);
     if (apiResponse != null) {
-      if (apiResponse.statusCode == 201) {
+      if (apiResponse.statusCode == 200) {
         return true;
       }
       return false;
@@ -41,7 +43,7 @@ class UserRepository {
       data: loginPayload,
     );
     if (apiResponse != null) {
-      if (apiResponse.statusCode == 201) {
+      if (apiResponse.statusCode == 200) {
         user = User.fromJson(apiResponse.data);
       }
       user = User.withError("something went wrong");
